@@ -1,0 +1,205 @@
+{
+  "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84": {
+    "poolName": "Lido Finance",
+    "poolType": "Liquidity Staking",
+    "poolToken": "ETH",
+    "unstakingOption": 2,
+    "info": {
+      "operation": "Lido Finance",
+      "startDate": "2020-12",
+      "isInvested": "true",
+      "vcInvestment": [
+        "Paradigm",
+        "Three Arrows Capital",
+        "Jump Trading",
+        "Digital Currency Group",
+        "Coinbase Ventures",
+        "Alameda Research",
+        "a16z",
+        "Dragonfly Capital"
+      ],
+      "hackingHistory": "-",
+      "auditPerformed": "37",
+      "auditLink": "https://github.com/lidofinance/audits",
+      "Phase": "Staking 가능"
+    }
+  },
+  "0x1643E812aE58766192Cf7D2Cf9567dF2C37e9B7F": {
+    "poolName": "Lido finance",
+    "poolType": "Liquidity Staking",
+    "poolToken": "stETH",
+    "infoURL": "https://eth-api.testnet.fi/v1/protocol/steth/apr/sma",
+    "unstakingOption": 1,
+    "info": {
+      "operation": "Rocketpool finance",
+      "startDate": "2021-11",
+      "vcInvestment": [
+        "1kx",
+        "Coinbase Ventures",
+        "Consensys Mesh",
+        "Deeptech Ventures",
+        "KR1"
+      ],
+      "hackingHistory": "2",
+      "auditPerformed": "8",
+      "auditLink": "https://docs.frax.finance/other/audits",
+      "Phase": "Staking 가능"
+    }
+  },
+  "0xae78736Cd615f374D3085123A210448E74Fc6393": {
+    "poolName": "Rocketpool finance",
+    "poolType": "Liquidity Staking",
+    "poolToken": "ETH",
+    "unstakingOption": 1,
+    "info": {
+      "operation": "Rocketpool finance",
+      "startDate": "2021-11",
+      "vcInvestment": [
+        "1kx",
+        "Coinbase Ventures",
+        "Consensys Mesh",
+        "Deeptech Ventures",
+        "KR1"
+      ],
+      "hackingHistory": "2",
+      "auditPerformed": "8",
+      "auditLink": "https://docs.frax.finance/other/audits",
+      "Phase": "Staking 가능"
+    }
+  },
+  "0xbAFA44EFE7901E04E39Dad13167D089C559c1138": {
+    "poolName": "Frax finance",
+    "poolType": "Liquidity Staking",
+    "poolToken": "ETH",
+    "unstakingOption": 1,
+    "info": {
+      "operation": "Frax Finance",
+      "startDate": "2022년 01월",
+      "isInvested": "true",
+      "vcInvestment": [
+        "Robot Ventures",
+        "Dragonfly Capital Partners",
+        "BlackDragon",
+        "Electric Capital",
+        "Deltahub Capital",
+        "Fomocraft Ventures",
+        "Mechanism Capital",
+        "CRT Labs",
+        "Infinite",
+        "Flux Capital",
+        "Fairum Venture"
+      ],
+      "hackingHistory": "0회",
+      "auditPerformed": "7회",
+      "auditLink": "https://docs.frax.finance/other/audits",
+      "Phase": "Staking 가능"
+    }
+  },
+  "0xf951E335afb289353dc249e82926178EaC7DEd78": {
+    "poolName": "Swell",
+    "poolType": "Liquidity Staking",
+    "poolToken": "ETH",
+    "unstakingOption": 2,
+    "info": {
+      "operation": "Swell",
+      "startDate": "2023-04",
+      "isInvested": "true",
+      "vcInvestment": [
+        "Framework",
+        "IOSG VENTURES",
+        "APOLLO CRYPTO",
+        "MAVEN11 captital",
+        "BIXIN Ventures"
+      ],
+      "hackingHistory": "no accident",
+      "auditPerformed": "1 time",
+      "auditLink": "https://github.com/SwellNetwork/v3-core-public/blob/master/Audit Reports/Sigma_Prime_Swell_Network_Security_Assessment_Report_v2_0.pdf",
+      "Phase": "Staking 가능"
+    }
+  },
+  "0x7623e9DC0DA6FF821ddb9EbABA794054E078f8c4": {
+    "poolName": "ether.fi",
+    "poolType": "Liquidity Staking",
+    "poolToken": "ETH",
+    "unstakingOption": 0,
+    "info": {
+      "operation": "ether.fi",
+      "startDate": "2023-03",
+      "isInvested": "true",
+      "vcInvestment": [
+        "Arrington Capital",
+        "Version One Ventures",
+        "Purpose Investments",
+        "Chapter One Ventures",
+        "Node Capital (Lead Investor)",
+        "Maelstrom",
+        "North Island Ventures"
+      ],
+      "hackingHistory": "None",
+      "auditPerformed": "2 times",
+      "auditLink": "https://etherfi.gitbook.io/etherfi/security/audits",
+      "Phase": "Staking 가능"
+    }
+  },
+  "0xFe2e637202056d30016725477c5da089Ab0A043A": {
+    "poolName": "StakeWise",
+    "poolType": "Liquidity Staking",
+    "poolToken": "ETH",
+    "unstakingOption": 2,
+    "info": {
+      "operation": "StakeWise",
+      "startDate": "2021-03",
+      "isInvested": "true",
+      "vcInvestment": [
+        "Greenfield",
+        "Collider Ventures",
+        "Gumi Cryptos",
+        "Lionschain Capital"
+      ],
+      "hackingHistory": "no accident",
+      "auditPerformed": "1",
+      "auditLink": "https://github.com/runtimeverification/publications/blob/main/reports/smart-contracts/StakeWise.pdf",
+      "Phase": "Staking 가능"
+    }
+  },
+  "0xa2E3356610840701BDf5611a53974510Ae27E2e1": {
+    "poolName": "Binance staked ETH",
+    "poolType": "Liquidity Staking",
+    "poolToken": "ETH",
+    "unstakingOption": 2,
+    "info": {
+      "operation": "Binance",
+      "startDate": "2017-07",
+      "isInvested": "true",
+      "vcInvestment": ["Black Hole Capital", "Funcity Capital"],
+      "hackingHistory": "1회",
+      "auditPerformed": "0회",
+      "auditLink": "",
+      "Phase": "Staking 가능"
+    }
+  },
+  "0xE95A203B1a91a908F9B9CE46459d101078c2c3cb": {
+    "poolName": "Ankr",
+    "poolType": "Liquidity Staking",
+    "poolToken": "ETH",
+    "unstakingOption": 1,
+    "info": {
+      "operation": "Ankr",
+      "startDate": "2017-11",
+      "isInvested": "true",
+      "vcInvestment": [
+        "NGC Ventures",
+        "JD Capital",
+        "JLAB",
+        "BlockVC",
+        "DHVC",
+        "OK Blockchain Capital",
+        "Bixin Ventures"
+      ],
+      "hackingHistory": "1",
+      "auditPerformed": "1",
+      "auditLink": "https://assets.ankr.com/files/stkr_smart_contract_auditing_report.pdf",
+      "Phase": "Staking 가능"
+    }
+  }
+}
