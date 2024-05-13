@@ -1,3 +1,3 @@
-# undefined hackathon 
+# Sui overflow hackathon - 2024
 
-Ethereum 샤펠리 업그레이드 이후 해커톤 참여
+Sui Defi aggreagator service
