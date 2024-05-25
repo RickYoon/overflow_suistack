@@ -6,7 +6,7 @@ import react, {useState, useEffect} from "react";
 import { useDispatch , useSelector } from 'react-redux';
 import './index.css';
 
-function Invest() {
+function SuiLongStaking() {
 
   return (
     <>
@@ -16,64 +16,71 @@ function Invest() {
           <OverBox>
               <SubTemplateBlockVertical>                
                 <Wrappertitle>
-                    <Title>DeFi Menu</Title>                
+                    <Title>Sui Staking</Title>                
                 </Wrappertitle>
 
-                <div class="text-center" style={{padding:"10px", fontColor:"red"}}>
-                  Find your best defi recipe in Sui chain          
-                </div>
-                   
-                <div style={{paddingTop:"50px"}}/>   
+                <div style={{paddingTop:"20px"}}/>   
 
                   <Wrappertitle>
-                    <div className="text-center text-lg text-neutral-800">What is your DeFi investment strategy?</div>                
+                    <div className="text-center text-lg text-neutral-800">
+                        Combo Investment
+                    </div>                
                   </Wrappertitle>
-                  
-                  <Link to="/yield/long">
+
+                  <Link to="/yield/long/staking">
                     <div className="mt-5 border border-black p-3 bg-white hover:bg-gray-100 hover:border-blue-400">
-                            <p className="text-xl font-medium">DeFi Yield with Sui Long Postion</p>
-                            <p className="text-mx text-gray-500"> - gain from both coin value and interest income.</p>
+                        <p className="text-xl font-medium">Haedal + Cetus (17.7%) </p>
+                        <p className="text-mx text-gray-500"> - APR : - Staking (0.65 %) + LP (16.4%) </p>
+                      </div>                    
+                  </Link>
+                   
+                <div style={{paddingTop:"20px"}}/>   
+
+                  <Wrappertitle>
+                    <div className="text-center text-lg text-neutral-800">
+                        Single Investment
+                    </div>                
+                  </Wrappertitle>
+
+
+                  <Link to="/yield/long/staking">
+                    <div className="mt-5 border border-black p-3 bg-white hover:bg-gray-100 hover:border-blue-400">
+                        <p className="text-xl font-medium">Haedal (1.3%) </p>
+                        <p className="text-mx text-gray-500"> - APR : - Staking (1.3 %)</p>
                       </div>                    
                   </Link>
 
-                  <Link to="/detail/0x1643E812aE58766192Cf7D2Cf9567dF2C37e9B7F">
-                    <div className="mt-5 border border-black p-3 bg-white hover:bg-gray-100 hover:border-blue-400">
-                            <p className="text-xl font-medium">DeFi Yield with No Postion</p>
-                            <p className="text-mx text-gray-500"> - yield without worrying about price fluctuations.</p>
-                      </div>                    
-                  </Link>
+                
 
                   <div style={{marginTop:"30px"}}></div>
 
                   {/* <Wrappertitle>
                     <div className="text-center text-lg text-neutral-800">Choose the type of deFi</div>                
-                </Wrappertitle>
-                  
-                  <Link to="/detail/0x1643E812aE58766192Cf7D2Cf9567dF2C37e9B7F">
-                    <div className="mt-5 border border-gray-100 rounded-lg p-3 bg-white hover:bg-gray-100 hover:border-blue-400">
-                            <p className="text-xl font-medium">Staking</p>
-                            <p className="text-mx text-gray-500"> - gain from both coin value and interest income.</p>
-                    </div>                    
-                 </Link>
-                 <Link to="/detail/0x1643E812aE58766192Cf7D2Cf9567dF2C37e9B7F">
-                  <div className="mt-5 border border-gray-100 rounded-lg p-3 bg-white hover:bg-gray-100 hover:border-blue-400">
-                          <p className="text-xl font-medium">Lending</p>
-                          <p className="text-mx text-gray-500"> - yield without worrying about price fluctuations.</p>
-                  </div>                    
-                 </Link>
-                 <Link to="/detail/0x1643E812aE58766192Cf7D2Cf9567dF2C37e9B7F">
-                  <div className="mt-5 border border-gray-100 rounded-lg p-3 bg-white hover:bg-gray-100 hover:border-blue-400">
-                          <p className="text-xl font-medium">LP Farming</p>
-                          <p className="text-mx text-gray-500"> - yield without worrying about price fluctuations.</p>
-                  </div>                    
+                    </Wrappertitle>
+                      
+                      <Link to="/detail/0x1643E812aE58766192Cf7D2Cf9567dF2C37e9B7F">
+                        <div className="mt-5 border border-gray-100 rounded-lg p-3 bg-white hover:bg-gray-100 hover:border-blue-400">
+                                <p className="text-xl font-medium">Staking</p>
+                                <p className="text-mx text-gray-500"> - gain from both coin value and interest income.</p>
+                        </div>                    
+                    </Link>
+                    <Link to="/detail/0x1643E812aE58766192Cf7D2Cf9567dF2C37e9B7F">
+                      <div className="mt-5 border border-gray-100 rounded-lg p-3 bg-white hover:bg-gray-100 hover:border-blue-400">
+                              <p className="text-xl font-medium">Lending</p>
+                              <p className="text-mx text-gray-500"> - yield without worrying about price fluctuations.</p>
+                      </div>                    
+                    </Link>
+                    <Link to="/detail/0x1643E812aE58766192Cf7D2Cf9567dF2C37e9B7F">
+                      <div className="mt-5 border border-gray-100 rounded-lg p-3 bg-white hover:bg-gray-100 hover:border-blue-400">
+                              <p className="text-xl font-medium">LP Farming</p>
+                              <p className="text-mx text-gray-500"> - yield without worrying about price fluctuations.</p>
+                      </div>                    
                  </Link> */}
                   <div style={{marginTop:"30px"}}></div>
 
-                  {/* <button class="w-full items-center p-3 text-white font-bold text-gray-900 rounded-lg bg-gray-200 hover:bg-black group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
-                      <div style={{textAlign:"center"}}>Start Order</div>
-                  </button>       */}
-
+              
             </SubTemplateBlockVertical>
+            
           </OverBox>
         </div>
       </div>
@@ -276,8 +283,5 @@ const SubTemplateBlockSub = styled.div`
 `;
 
 
-
-
-
-export default Invest;
+export default SuiLongStaking;
 

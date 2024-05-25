@@ -1,0 +1,360 @@
+{
+  "0x871d8a227114f375170f149f7e9d45be822dd003eba225e83c05ac80828596bc": {
+    "poolName": "Cetus - hSUI/SUI Pool",
+    "poolType": "LP",
+    "poolToken": "KLAY",
+    "unstakingOption": 1,
+    "info": {
+      "operation": "ozys",
+      "startDate": "2023년 01년 02일",
+      "hackingHistory": "0회",
+      "auditPerformed": "수행함"
+    },
+    "manage": {
+      "connected": false,
+      "deposit": true,
+      "withdrawl": true,
+      "swap": true
+    }
+  },
+  "klaybank": {
+    "poolName": "klaybank",
+    "poolType": "Lending",
+    "poolToken": "KLAY",
+    "unstakingOption": 1,
+    "info": {
+      "operation": "ozys",
+      "startDate": "2023년 01년 02일",
+      "hackingHistory": "0회",
+      "auditPerformed": "수행함"
+    },
+    "manage": {
+      "connected": false,
+      "deposit": true,
+      "withdrawl": true,
+      "swap": true
+    }
+  },
+  "0xc8d7a1503dc2f9f5b05449a87d8733593e2f0f3e7bffd90541252782e4d2ca20": {
+    "poolName": "klaybank",
+    "poolType": "Lending",
+    "poolToken": "KLAY",
+    "linkUrl": "https://app.klaybank.org/",
+    "unstakingOption": 1,
+    "info": {
+      "operation": "klaybank",
+      "startDate": "January 20, 2022",
+      "hackingHistory": "0회",
+      "auditPerformed": "Done"
+    },
+    "manage": {
+      "connected": false,
+      "deposit": true,
+      "withdrawl": true,
+      "swap": true
+    }
+  },
+  "0x4b419986e15018e6dc1c9dab1fa4824d8e2e06b5": {
+    "poolName": "klayswap",
+    "poolType": "Lending",
+    "poolToken": "oUSDT",
+    "unstakingOption": 1,
+    "info": {
+      "operation": "ozys",
+      "startDate": "2023년 01년 02일",
+      "hackingHistory": "0회",
+      "auditPerformed": "수행함"
+    },
+    "manage": {
+      "connected": false,
+      "deposit": true,
+      "withdrawl": true,
+      "swap": true
+    }
+  },
+  "0xaee24956f6ccc58deac3c49ddb65a5c72d8bdd30": {
+    "poolName": "kokoa Finance",
+    "poolType": "Lending",
+    "poolToken": "oUSDT",
+    "unstakingOption": 1,
+    "info": {
+      "operation": "ozys",
+      "startDate": "2023년 01년 02일",
+      "hackingHistory": "0회",
+      "auditPerformed": "수행함"
+    },
+    "manage": {
+      "connected": false,
+      "deposit": true,
+      "withdrawl": true,
+      "swap": true
+    }
+  },
+  "0x4b6ece52d0ef60ae054f45c45d6ba4f7a0c2cc67": {
+    "poolName": "Klaybank",
+    "poolType": "Liquidity Staking",
+    "poolToken": "oUSDT",
+    "info": {
+      "operation": "ozys",
+      "startDate": "2023년 01년 02일",
+      "hackingHistory": "0회",
+      "auditPerformed": "수행함"
+    },
+    "manage": {
+      "connected": false,
+      "deposit": true,
+      "withdrawl": true,
+      "swap": true
+    }
+  },
+  "0xfaeec9b2623b66bbb3545ca24cfc32a8504fcf1b": {
+    "poolName": "kleva",
+    "poolType": "Lending",
+    "poolToken": "oUSDT",
+    "unstakingOption": 1,
+    "info": {
+      "operation": "ozys",
+      "startDate": "2023년 01년 02일",
+      "hackingHistory": "0회",
+      "auditPerformed": "수행함"
+    },
+    "manage": {
+      "connected": false,
+      "deposit": true,
+      "withdrawl": true,
+      "swap": true
+    }
+  },
+  "0xe0e67b991d6b5cf73d8a17a10c3de74616c1ec11": {
+    "poolName": "BiFi",
+    "poolType": "Lending",
+    "poolToken": "oUSDT",
+    "isLinked": true,
+    "unstakingOption": 1,
+    "info": {
+      "operation": "ozys",
+      "startDate": "2023년 01년 02일",
+      "hackingHistory": "0회",
+      "auditPerformed": "수행함"
+    },
+    "manage": {
+      "connected": false,
+      "deposit": true,
+      "withdrawl": true,
+      "swap": true
+    }
+  },
+  "0x74ba03198fed2b15a51af242b9c63faf3c8f4d34": {
+    "poolName": "Klaymore",
+    "poolType": "Node Staking",
+    "poolToken": "KLAY",
+    "isLinked": true,
+    "linkUrl": "https://klaystake.house/",
+    "unstakingOption": 1,
+    "info": {
+      "operation": "Anonymous",
+      "startDate": "Aug 18th, 2021",
+      "hackingHistory": "0",
+      "auditPerformed": "No"
+    },
+    "manage": {
+      "connected": false,
+      "deposit": true,
+      "withdrawl": true,
+      "swap": true
+    }
+  },
+  "0xa691c5891d8a98109663d07bcf3ed8d3edef820a": {
+    "poolName": "kleva",
+    "poolType": "Leverage Farming",
+    "linkUrl": "https://kleva.io/",
+    "info": {
+      "operation": "Wemix",
+      "startDate": "January 19, 2022",
+      "hackingHistory": "1 time",
+      "auditPerformed": "done"
+    },
+    "manage": {
+      "connected": false,
+      "deposit": true,
+      "withdrawl": true,
+      "swap": true
+    }
+  },
+  "0x829fcfb6a6eea9d14eb4c14fac5b29874bdbad13": {
+    "poolName": "BiFi",
+    "poolType": "Lending",
+    "poolToken": "KLAY",
+    "isLinked": true,
+    "linkUrl": "https://app.bifi.finance/lend?chainid=klaytn&utm_source=marketing&utm_campaign=to_klaytn%2F",
+    "unstakingOption": 1,
+    "info": {
+      "operation": "PiLab",
+      "startDate": "January 7, 2021",
+      "hackingHistory": "1 Time",
+      "auditPerformed": "Done"
+    },
+    "manage": {
+      "connected": false,
+      "deposit": true,
+      "withdrawl": true,
+      "swap": true
+    }
+  },
+  "0x0795aea6948fc1d31809383edc4183b220abd71f": {
+    "poolName": "Jump-EverStake (Klaystation)",
+    "poolType": "Liquidity Staking",
+    "poolToken": "KLAY",
+    "isLinked": true,
+    "linkUrl": "https://klaystation.io/staking/detailpage/0x0795aea6948fc1d31809383edc4183b220abd71f",
+    "info": {
+      "operation": "Jump-EverStake",
+      "startDate": "-",
+      "hackingHistory": "-",
+      "auditPerformed": "-"
+    },
+    "manage": {
+      "connected": false,
+      "deposit": true,
+      "withdrawl": true,
+      "swap": true
+    }
+  },
+  "0xe33337cb6fbb68954fe1c3fde2b21f56586632cd": {
+    "poolName": "Ozys (Klaystation)",
+    "poolType": "Liquidity Staking",
+    "poolToken": "KLAY",
+    "isLinked": true,
+    "linkUrl": "https://klaystation.io/staking/detailpage/0x77777779ee2d933da027ee1fb3590c41529046c8",
+    "unstakingOption": 2,
+    "info": {
+      "operation": "ozys",
+      "startDate": "2023년 01년 02일",
+      "hackingHistory": "0회",
+      "auditPerformed": "수행함"
+    },
+    "manage": {
+      "connected": false,
+      "deposit": true,
+      "withdrawl": true,
+      "swap": true
+    }
+  },
+  "0xf50782a24afcb26acb85d086cf892bfffb5731b5": {
+    "poolName": "swapscanner",
+    "poolType": "Liquidity Staking",
+    "poolToken": "KLAY",
+    "isLinked": false,
+    "linkUrl": "https://swapscanner.io/ko/staking",
+    "stakeUrl": "https://swapscanner.io/ko/staking",
+    "unstakeUrl": "https://swapscanner.io/ko/staking",
+    "unstakingOption": 2,
+    "info": {
+      "operation": "swapscanner",
+      "startDate": "May 1, 2023",
+      "hackingHistory": "0",
+      "auditPerformed": "Done"
+    },
+    "manage": {
+      "connected": false,
+      "deposit": true,
+      "withdrawl": true,
+      "swap": true
+    }
+  },
+  "0xf80f2b22932fcec6189b9153aa18662b15cc9c00": {
+    "poolName": "stakely",
+    "poolType": "Liquidity Staking",
+    "poolToken": "KLAY",
+    "isLinked": true,
+    "linkUrl": "https://stake.ly/",
+    "unstakingOption": 2,
+    "info": {
+      "operation": "stake.ly",
+      "startDate": "Oct 26, 2022",
+      "hackingHistory": "0",
+      "auditPerformed": "Performed"
+    },
+    "manage": {
+      "connected": true,
+      "deposit": true,
+      "withdrawl": true,
+      "swap": true
+    }
+  },
+  "0x7087d5a9e3203d39ec825d02d92f66ed3203b18a": {
+    "poolName": "kokoa finance",
+    "poolType": "CDP (Collateralized Debt Positions)",
+    "poolToken": "KLAY",
+    "isLinked": true,
+    "linkUrl": "https://app.kokoa.finance/",
+    "info": {
+      "operation": "Anonymous",
+      "startDate": "October 4, 2021",
+      "hackingHistory": "0",
+      "auditPerformed": "Done"
+    },
+    "manage": {
+      "connected": false,
+      "deposit": true,
+      "withdrawl": true,
+      "swap": true
+    }
+  },
+  "0xe4c3f5454a752bddda18ccd239bb1e00ca42d371": {
+    "poolName": "Klayswap",
+    "poolType": "Single Deposit",
+    "poolToken": "KLAY",
+    "linkUrl": "https://klayswap.com/single/pool",
+    "info": {
+      "operation": "ozys",
+      "startDate": "November 11, 2020",
+      "hackingHistory": "1 time",
+      "auditPerformed": "Done"
+    },
+    "manage": {
+      "connected": false,
+      "deposit": true,
+      "withdrawl": true,
+      "swap": true
+    }
+  },
+  "0xeffa404dac6ba720002974c54d57b20e89b22862": {
+    "poolName": "Hankyung (Klaystation)",
+    "poolType": "Liquidity Staking",
+    "poolToken": "KLAY",
+    "isLinked": true,
+    "linkUrl": "https://klaystation.io/staking/detailpage/0xeffa404dac6ba720002974c54d57b20e89b22862",
+    "info": {
+      "operation": "Hankyung",
+      "startDate": "-",
+      "hackingHistory": "-",
+      "auditPerformed": "-"
+    },
+    "manage": {
+      "connected": false,
+      "deposit": true,
+      "withdrawl": true,
+      "swap": true
+    }
+  },
+  "0x962cdb28e662b026df276e5ee7fdf13a06341d68": {
+    "poolName": "FSN (Klaystation)",
+    "poolType": "Liquidity Staking",
+    "poolToken": "KLAY",
+    "isLinked": true,
+    "linkUrl": "https://klaystation.io/staking/detailpage/0x962cdb28e662b026df276e5ee7fdf13a06341d68",
+    "info": {
+      "operation": "FSN",
+      "startDate": "-",
+      "hackingHistory": "-",
+      "auditPerformed": "-"
+    },
+    "manage": {
+      "connected": false,
+      "deposit": true,
+      "withdrawl": true,
+      "swap": false
+    }
+  }
+}

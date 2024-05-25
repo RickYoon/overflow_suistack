@@ -5,13 +5,20 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from "react-redux";
 import store from "redux/store";
+import '@radix-ui/themes/styles.css';
+import { Theme } from '@radix-ui/themes';
+import { WalletProvider } from "@suiet/wallet-kit";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <Theme>
+        <WalletProvider>
+          <App />
+        </WalletProvider>
+      </Theme>
     </Provider>
   </React.StrictMode>
 );

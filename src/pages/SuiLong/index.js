@@ -6,7 +6,7 @@ import react, {useState, useEffect} from "react";
 import { useDispatch , useSelector } from 'react-redux';
 import './index.css';
 
-function Invest() {
+function SuiLong() {
 
   return (
     <>
@@ -16,32 +16,38 @@ function Invest() {
           <OverBox>
               <SubTemplateBlockVertical>                
                 <Wrappertitle>
-                    <Title>DeFi Menu</Title>                
+                    <Title>Yield with <br /> Sui Long Position</Title>                
                 </Wrappertitle>
-
-                <div class="text-center" style={{padding:"10px", fontColor:"red"}}>
-                  Find your best defi recipe in Sui chain          
-                </div>
                    
                 <div style={{paddingTop:"50px"}}/>   
 
                   <Wrappertitle>
-                    <div className="text-center text-lg text-neutral-800">What is your DeFi investment strategy?</div>                
+                    <div className="text-center text-lg text-neutral-800">
+                        Which type of investmet you want?
+                    </div>                
                   </Wrappertitle>
                   
-                  <Link to="/yield/long">
+                  <Link to="/yield/long/staking">
                     <div className="mt-5 border border-black p-3 bg-white hover:bg-gray-100 hover:border-blue-400">
-                            <p className="text-xl font-medium">DeFi Yield with Sui Long Postion</p>
-                            <p className="text-mx text-gray-500"> - gain from both coin value and interest income.</p>
+                            <p className="text-xl font-medium">Staking</p>
+                            <p className="text-mx text-gray-500"> - Earning from network incentive </p>
                       </div>                    
                   </Link>
 
                   <Link to="/detail/0x1643E812aE58766192Cf7D2Cf9567dF2C37e9B7F">
                     <div className="mt-5 border border-black p-3 bg-white hover:bg-gray-100 hover:border-blue-400">
-                            <p className="text-xl font-medium">DeFi Yield with No Postion</p>
+                            <p className="text-xl font-medium">Lending</p>
                             <p className="text-mx text-gray-500"> - yield without worrying about price fluctuations.</p>
                       </div>                    
                   </Link>
+
+                  <Link to="/detail/0x1643E812aE58766192Cf7D2Cf9567dF2C37e9B7F">
+                    <div className="mt-5 border border-black p-3 bg-white hover:bg-gray-100 hover:border-blue-400">
+                            <p className="text-xl font-medium">LP Farming</p>
+                            <p className="text-mx text-gray-500"> - yield without worrying about price fluctuations.</p>
+                      </div>                    
+                  </Link>
+
 
                   <div style={{marginTop:"30px"}}></div>
 
@@ -279,5 +285,5 @@ const SubTemplateBlockSub = styled.div`
 
 
 
-export default Invest;
+export default SuiLong;
 
