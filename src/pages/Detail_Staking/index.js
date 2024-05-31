@@ -87,7 +87,16 @@ function DetailStaking() {
       const res = await wallet.signAndExecuteTransactionBlock({
         transactionBlock: txb,
       });
-      console.log("transaction success!", res.digest);
+
+      Swal.fire({
+        title: "Success!",
+        html: `
+              <b>Check the transaction</b> ->
+              <a href="https://suivision.xyz/txblock/${res.digest}" target="_blank">Link</a> 
+           `
+      });
+
+      // console.log("transaction success!", res.digest);
       // alert("Congrats! ");
     } catch (e) {
       // alert("Oops!! ");
@@ -108,7 +117,7 @@ function DetailStaking() {
         transactionBlock: txb,
       });
   
-      console.log("transaction success!", res);
+      // console.log("transaction success!", res);
 
       Swal.fire({
         title: "Success!",
