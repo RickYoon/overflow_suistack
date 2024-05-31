@@ -95,11 +95,7 @@ function DetailStaking() {
               <a href="https://suivision.xyz/txblock/${res.digest}" target="_blank">Link</a> 
            `
       });
-
-      // console.log("transaction success!", res.digest);
-      // alert("Congrats! ");
     } catch (e) {
-      // alert("Oops!! ");
       console.error("transaction failed", e);
     }
   }

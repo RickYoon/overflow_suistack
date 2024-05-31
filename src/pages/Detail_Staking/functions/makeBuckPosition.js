@@ -35,7 +35,7 @@ export async function BuckPosition() {
   
   // 트렌젝션 만들기
   const tx = new TransactionBlock();
-  tx.setSender("0xa59fc5ed0e38f03995262b73916126592d240736ddf6f82c1901ea1d08b566be");
+  tx.setSender("0x79dea7c391d4d756a6a66963dff03ce97c235e918518fb8cbd99602ccde10db2");
   
   const ORACLE_OBJECT = Inputs.SharedObjectRef({
     objectId:
@@ -101,7 +101,7 @@ export async function BuckPosition() {
       arguments: [buck_output_balance],
     });
 
-    tx.transferObjects([buck_res], tx.pure("0xa59fc5ed0e38f03995262b73916126592d240736ddf6f82c1901ea1d08b566be"));
+    tx.transferObjects([buck_res], tx.pure("0x79dea7c391d4d756a6a66963dff03ce97c235e918518fb8cbd99602ccde10db2"));
    
     return tx;
     
