@@ -12,6 +12,7 @@ import {LendSuiNavi} from "./functions/navi/lendSui.js"
 import {FlashloanLeverage} from "./functions/buck/FlashLeverage.js"
 
 import "@suiet/wallet-kit/style.css";
+import Swal from 'sweetalert2'
 
 function DetailStaking() {
 
@@ -86,10 +87,10 @@ function DetailStaking() {
       const res = await wallet.signAndExecuteTransactionBlock({
         transactionBlock: txb,
       });
-      console.log("transaction success!", res);
-      alert("Congrats! ");
+      console.log("transaction success!", res.digest);
+      // alert("Congrats! ");
     } catch (e) {
-      alert("Oops!! ");
+      // alert("Oops!! ");
       console.error("transaction failed", e);
     }
   }
@@ -106,8 +107,17 @@ function DetailStaking() {
       const res = await wallet.signAndExecuteTransactionBlock({
         transactionBlock: txb,
       });
+  
       console.log("transaction success!", res);
-      alert("Congrats! ");
+
+      Swal.fire({
+        title: "Success!",
+        html: `
+              <b>Check the transaction</b> ->
+              <a href="https://suivision.xyz/txblock/${res.digest}" target="_blank">Link</a> 
+           `
+      });
+
     } catch (e) {
       alert("Oops!! ");
       console.error("transaction failed", e);
@@ -132,10 +142,10 @@ function DetailStaking() {
     }
   }
 
-  async function handleFlashloan() {
+  async function makebuck() {
 
     if (!wallet.connected) return;
-    const txb = await FlashloanLeverage();
+    const txb = await BuckPosition();
 
     try {
       // call the wallet to sign and execute the transaction
@@ -218,7 +228,7 @@ function DetailStaking() {
               </div>
 
               <div class="flex space-x-5 mt-0 p-3">
-                <button onClick={handleLendSui} class="bg-white hover:bg-gray-100 hover:border-blue-300 border border-red inline-block w-full p-3 text-blue-600 rounded-lg focus:ring-1 focus:ring-blue-300 active focus:outline-none dark:bg-blue-700 dark:text-white">
+                <button onClick={handleBuck} class="bg-white hover:bg-gray-100 hover:border-blue-300 border border-red inline-block w-full p-3 text-blue-600 rounded-lg focus:ring-1 focus:ring-blue-300 active focus:outline-none dark:bg-blue-700 dark:text-white">
                   Lend and Borrow Buck <br />
                   APR : - %
                 </button> 
