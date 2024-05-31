@@ -181,7 +181,7 @@ function DetailStaking() {
 
               <div className="md:flex md:justify-center md:items-center">
                   <div className="flex flex-row" style={{fontSize:"20px"}}>
-                      <div className="text-gray-500">We provide one-click transactions for you</div>
+                      <div className="text-gray-500">We provide programed transactions for you</div>
                   </div>                
               </div>
 
@@ -208,38 +208,59 @@ function DetailStaking() {
 
               <div className="md:flex md:justify-center md:items-center mt-10">
                   <div className="flex flex-row" style={{fontSize:"20px"}}>
-                      <div>Select Finance</div>
+                      <div>Select Single Finance</div>
                   </div>                
               </div>
 
               <div class="flex space-x-5 mt-0 p-3">
                 <button onClick={handleLendSui} class="bg-white hover:bg-gray-100 hover:border-blue-300 border border-red inline-block w-full p-3 text-blue-600 rounded-lg focus:ring-1 focus:ring-blue-300 active focus:outline-none dark:bg-blue-700 dark:text-white">
                   Lend to Scallop <br/>
-                  Apr : 21%
+                  Apr : 14.22%
                 </button> 
                 <button onClick={handleNaviSui} class="bg-white hover:bg-gray-100 hover:border-blue-300 border border-red inline-block w-full p-3 text-blue-600 rounded-lg focus:ring-1 focus:ring-blue-300 active focus:outline-none dark:bg-blue-700 dark:text-white">
                   Lend to Navi <br/>
-                  Apr : 19%
+                  Apr : 22.12%
                 </button> 
                 <button onClick={LendToSuilend} class="bg-white hover:bg-gray-100 hover:border-blue-300 border border-red inline-block w-full p-3 text-blue-600 rounded-lg focus:ring-1 focus:ring-blue-300 active focus:outline-none dark:bg-blue-700 dark:text-white">
                   Lend to Suilend <br/>
-                  Apr : 21%
+                  Apr : 13.39%
                 </button>
               </div>
 
               <div class="flex space-x-5 mt-0 p-3">
                 <button onClick={handleBuck} class="bg-white hover:bg-gray-100 hover:border-blue-300 border border-red inline-block w-full p-3 text-blue-600 rounded-lg focus:ring-1 focus:ring-blue-300 active focus:outline-none dark:bg-blue-700 dark:text-white">
                   Lend and Borrow Buck <br />
-                  APR : - %
+                  APR : - 4.5 % (fixed)
                 </button> 
+                <button onClick={handleBuck} class="bg-white hover:bg-gray-100 hover:border-blue-300 border border-red inline-block w-full p-3 text-blue-600 rounded-lg focus:ring-1 focus:ring-blue-300 active focus:outline-none dark:bg-blue-700 dark:text-white">
+                  Borrow USDC <br />
+                  APR : + 11.5 %
+                </button> 
+
+                <button class="inline-block w-full p-3 text-blue-600 rounded-lg focus:ring-1 focus:ring-blue-300 active hover:bg-gray-100 hover:border-blue-300 border border-red ">
+                  add more +<br />
+                </button> 
+
+              </div>
+
+              <div className="md:flex md:justify-center md:items-center mt-10">
+                  <div className="flex flex-row" style={{fontSize:"20px"}}>
+                      <div>Select Blended Finance</div>
+                  </div>                
+              </div>
+
+              <div class="flex space-x-5 mt-0 p-3">
                 <button onClick={handleLendSui} class="bg-white hover:bg-gray-100 hover:border-blue-300 border border-red inline-block w-full p-3 text-blue-600 rounded-lg focus:ring-1 focus:ring-blue-300 active focus:outline-none dark:bg-blue-700 dark:text-white">
-                  Leverage Farming Scallop <br />
-                  APR : 40 %
+                  Leverage Farming <br/>
+                  Apr : 14.22%
                 </button> 
-                <button onClick={handleLendSui} class="bg-gray-50 hover:bg-gray-100 hover:border-blue-300 border border-red inline-block w-full p-3 text-gray-600 rounded-lg focus:ring-1 focus:ring-blue-300 active focus:outline-none dark:bg-blue-700 dark:text-white">
-                  add <br />
-                  Transaction Request
+                <button class="inline-block w-full p-3 text-blue-600 rounded-lg focus:ring-1 focus:ring-blue-300 active hover:bg-gray-100 hover:border-blue-300 border border-red ">
+                  -<br />
                 </button> 
+                <button class="inline-block w-full p-3 text-blue-600 rounded-lg focus:ring-1 focus:ring-blue-300 active hover:bg-gray-100 hover:border-blue-300 border border-red ">
+                  -<br />
+                </button> 
+
               </div>
 
             </SubTemplateBlockVertical>
