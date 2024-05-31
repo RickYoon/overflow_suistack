@@ -1,10 +1,6 @@
 import 'App.css'; 
 import styled, { keyframes } from 'styled-components';
-import { useParams } from "react-router-dom";
-import WalletManageBox from "./components/WalletManageBox"
-import poolInfos from "./poolInfos.json"
-import { ConnectButton,useWallet } from "@suiet/wallet-kit";
-import "@suiet/wallet-kit/style.css";
+import { useWallet } from "@suiet/wallet-kit";
 
 import {cetusSwapExec} from "./functions/cetusSwapExec.js"
 import {oracleUpdate} from "./functions/updateOracle.js"
@@ -13,10 +9,12 @@ import {BuckPosition} from "./functions/makeBuckPosition.js"
 import {DepositSui} from "./functions/depositSui.js"
 import {LendToSuilend} from "./functions/suilend/lendToSuilend.js"
 import {LendSuiNavi} from "./functions/navi/lendSui.js"
+import {FlashloanLeverage} from "./functions/buck/FlashLeverage.js"
+
+import "@suiet/wallet-kit/style.css";
 
 function DetailStaking() {
 
-  const { id } = useParams();
   const wallet = useWallet(); 
 
   async function handleCetusSwap() {
@@ -134,6 +132,26 @@ function DetailStaking() {
     }
   }
 
+  async function handleFlashloan() {
+
+    if (!wallet.connected) return;
+    const txb = await FlashloanLeverage();
+
+    try {
+      // call the wallet to sign and execute the transaction
+      const res = await wallet.signAndExecuteTransactionBlock({
+        transactionBlock: txb,
+      });
+      console.log("transaction success!", res);
+      alert("Congrats! ");
+    } catch (e) {
+      alert("Oops!! ");
+      console.error("transaction failed", e);
+    }
+  }
+
+  
+
   
 
   // handleScallop
@@ -145,87 +163,74 @@ function DetailStaking() {
         <div class="p-4">
           <OverBox>
             <SubTemplateBlockVertical>
-              <div className="md:flex md:justify-center md:items-center pt-10">
+              <div className="md:flex md:justify-center md:items-center pt-5">
                   <div className="flex flex-row" style={{fontSize:"40px"}}>
-                      <div>Select Finance Services</div>
+                      <div>Quick Order</div>
                   </div>                
               </div>
 
-              <div className="md:flex md:justify-center md:items-center mt-5">
-                  <div className="flex flex-row" style={{fontSize:"25px"}}>
-                      <div>Select Asset</div>                    
+              <div className="md:flex md:justify-center md:items-center">
+                  <div className="flex flex-row" style={{fontSize:"20px"}}>
+                      <div className="text-gray-500">We provide one-click transactions for you</div>
                   </div>                
+              </div>
+
+
+              <div className="md:flex md:justify-center md:items-center mt-10">
+                  <div className="flex flex-row" style={{fontSize:"20px"}}>
+                      <div>Select asset and amount</div>                    
+                  </div>
               </div>
 
               <div className="w-40 m-auto md:flex md:justify-center md:items-center mt-3 border border-blue-300 bg-blue-100 inline-block p-2 text-blue-600 rounded-lg focus:ring-1 focus:ring-blue-300 active focus:outline-none dark:bg-blue-700 dark:text-white">
-                <div className="flex items-center" style={{ fontSize: "20px" }}>
+                <div className="flex" style={{ fontSize: "20px" }}>
                     <img src="https://sui-overflow.devfolio.co/_next/image?url=https%3A%2F%2Fassets.devfolio.co%2Fhackathons%2F518905b0a55146d3b97fc2a070cf7ecd%2Fassets%2Ffavicon%2F770.png&w=1440&q=75" alt="Sui Coin" className="w-8 h-8 mr-2 rounded-full flex-shrink-0" />
                     <div>
                         Sui
                     </div>
                 </div>
-            </div>
+              </div>
+                
+              <div class="w-80 m-auto relative pt-5">
+                  <input type="search" id="search" class="block w-full p-4 text-xm text-gray-900 border border-gray-300 rounded-lg bg-white focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="0" />
+                  <button class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Max</button>
+              </div>             
 
-              
-
-
-              <div className="md:flex md:justify-center md:items-center mt-20">
+              <div className="md:flex md:justify-center md:items-center mt-10">
                   <div className="flex flex-row" style={{fontSize:"20px"}}>
-                      <div>Lending</div>
+                      <div>Select Finance</div>
                   </div>                
               </div>
 
               <div class="flex space-x-5 mt-0 p-3">
-                <button onClick={handleLendSui} class="hover:bg-gray-100 hover:border-blue-300 border border-red inline-block w-full p-3 text-blue-600 rounded-lg focus:ring-1 focus:ring-blue-300 active focus:outline-none dark:bg-blue-700 dark:text-white">
+                <button onClick={handleLendSui} class="bg-white hover:bg-gray-100 hover:border-blue-300 border border-red inline-block w-full p-3 text-blue-600 rounded-lg focus:ring-1 focus:ring-blue-300 active focus:outline-none dark:bg-blue-700 dark:text-white">
                   Lend to Scallop <br/>
                   Apr : 21%
                 </button> 
-                <button onClick={handleNaviSui} class="border border-red inline-block w-full p-3 text-blue-600 rounded-lg focus:ring-1 focus:ring-blue-300 active focus:outline-none dark:bg-blue-700 dark:text-white">
+                <button onClick={handleNaviSui} class="bg-white hover:bg-gray-100 hover:border-blue-300 border border-red inline-block w-full p-3 text-blue-600 rounded-lg focus:ring-1 focus:ring-blue-300 active focus:outline-none dark:bg-blue-700 dark:text-white">
                   Lend to Navi <br/>
                   Apr : 19%
                 </button> 
-                <button onClick={LendToSuilend} class="border border-red inline-block w-full p-3 text-blue-600 rounded-lg focus:ring-1 focus:ring-blue-300 active focus:outline-none dark:bg-blue-700 dark:text-white">
+                <button onClick={LendToSuilend} class="bg-white hover:bg-gray-100 hover:border-blue-300 border border-red inline-block w-full p-3 text-blue-600 rounded-lg focus:ring-1 focus:ring-blue-300 active focus:outline-none dark:bg-blue-700 dark:text-white">
                   Lend to Suilend <br/>
                   Apr : 21%
                 </button>
               </div>
 
-
-              <div className="md:flex md:justify-center md:items-center p-3 mt-3">
-                  <div className="flex flex-row" style={{fontSize:"20px"}}>
-                      <div>Leverage Lending with Flashloan</div>
-                  </div>                
-              </div>
-
               <div class="flex space-x-5 mt-0 p-3">
-                <button onClick={handleLendSui} class="hover:bg-gray-100 hover:border-blue-300 border border-red inline-block w-full p-3 text-blue-600 rounded-lg focus:ring-1 focus:ring-blue-300 active focus:outline-none dark:bg-blue-700 dark:text-white">
-                  2x Lend to Scallop <br />
+                <button onClick={handleLendSui} class="bg-white hover:bg-gray-100 hover:border-blue-300 border border-red inline-block w-full p-3 text-blue-600 rounded-lg focus:ring-1 focus:ring-blue-300 active focus:outline-none dark:bg-blue-700 dark:text-white">
+                  Lend and Borrow Buck <br />
+                  APR : - %
+                </button> 
+                <button onClick={handleLendSui} class="bg-white hover:bg-gray-100 hover:border-blue-300 border border-red inline-block w-full p-3 text-blue-600 rounded-lg focus:ring-1 focus:ring-blue-300 active focus:outline-none dark:bg-blue-700 dark:text-white">
+                  Leverage Farming Scallop <br />
                   APR : 40 %
                 </button> 
-                <button onClick={handleLendSui} class="border border-red inline-block w-full p-3 text-blue-600 rounded-lg focus:ring-1 focus:ring-blue-300 active focus:outline-none dark:bg-blue-700 dark:text-white">
-                  - <br />
-                  APR : - %
-                </button> 
-                <button onClick={handleLendSui} class="border border-red inline-block w-full p-3 text-blue-600 rounded-lg focus:ring-1 focus:ring-blue-300 active focus:outline-none dark:bg-blue-700 dark:text-white">
-                  - <br />
-                  APR : - %
+                <button onClick={handleLendSui} class="bg-gray-50 hover:bg-gray-100 hover:border-blue-300 border border-red inline-block w-full p-3 text-gray-600 rounded-lg focus:ring-1 focus:ring-blue-300 active focus:outline-none dark:bg-blue-700 dark:text-white">
+                  add <br />
+                  Transaction Request
                 </button> 
               </div>
-
-
-
-              {/* <div class="flex space-x-5 mt-5">
-                <button onClick={handleUpdateOracle} class="inline-block w-full p-3 text-blue-600 bg-blue-100 rounded-lg focus:ring-1 focus:ring-blue-300 active focus:outline-none dark:bg-blue-700 dark:text-white">
-                  Update Oracle
-                </button> 
-                <button onClick={handleCetusSwap} class="inline-block w-full p-3 text-blue-600 bg-blue-100 rounded-lg focus:ring-1 focus:ring-blue-300 active focus:outline-none dark:bg-blue-700 dark:text-white">
-                  Swap 3 sui to haSui
-                </button> 
-                <button onClick={handleBuck} class="inline-block w-full p-3 text-blue-600 bg-blue-100 rounded-lg focus:ring-1 focus:ring-blue-300 active focus:outline-none dark:bg-blue-700 dark:text-white">
-                  Borrow Buck with Sui
-                </button> 
-
-              </div> */}
 
             </SubTemplateBlockVertical>
           </OverBox>

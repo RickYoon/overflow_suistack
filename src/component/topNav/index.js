@@ -93,7 +93,7 @@ function Topnav () {
             <nav class="">
                 <div class="max-w-screen-md flex flex-wrap items-center justify-between mx-auto p-3">
                     <a href="https://linkrypto.io/" class="flex items-center">
-                        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Craft Finance</span>
+                        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Fistack</span>
                     </a>
                         <ConnectButton />
                 </div>

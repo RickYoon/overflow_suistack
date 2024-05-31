@@ -21,23 +21,9 @@ function App() {
       <Router>
         <Routes>
             <Route path="/" element={<TopNav />} />
-            <Route path="/invest" element={<TopNav />} />
-            <Route exact path="/yield/long" element={<TopNav />} />
-            <Route exact path="/yield/long/staking" element={<TopNav />} />
-
-            <Route path="/search" element={<TopNav />} />
-            <Route path="/detail/:id" element={<TopNav />} />
           </Routes>
         <Routes>
-          <Route exact path="/" element={<Invest />} />
-          <Route exact path="/invest" element={<Invest />} />
-          <Route exact path="/yield/long" element={<SuiLong />} />
-          <Route exact path="/yield/long/staking" element={<SuiLongStaking />} />
-
-
-          <Route exact path="/cetus/:id" element={<cetus />} />
-          <Route exact path="/search" element={<Poollist />} />
-          <Route exact path="/detail/:id" element={<DetailStaking />} />
+          <Route exact path="/" element={<DetailStaking />} />
         </Routes>
       </Router>
     </>
