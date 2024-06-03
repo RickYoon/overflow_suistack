@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@chakra-ui/react": "2.8.2",
     "@headlessui/react": "2.0.3",
     "@heroicons/react": "2.0.18",
     "@mysten/sui.js": "0.54.1",

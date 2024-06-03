@@ -92,10 +92,30 @@ function Topnav () {
         <>
             <nav class="">
                 <div class="max-w-screen-md flex flex-wrap items-center justify-between mx-auto p-3">
-                    <a href="https://linkrypto.io/" class="flex items-center">
+                    <a href="https://main.d1jfku59jtk0ay.amplifyapp.com/" class="flex items-center">
                         <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Fistack</span>
                     </a>
-                        <ConnectButton />
+
+                    <div class="pl-20 items-center justify-between hidden w-full md:flex md:w-auto">
+                  <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700" style={{marginRight:"20px"}}>
+
+                    <li>            
+                        <Link to="/portfolio" class="flex items-center">
+                          <span class="pt-3">
+                          Wallet
+                          </span>
+                        </Link>
+                    </li>
+
+                    <li>                 
+                    <ConnectButton />
+                    </li>
+
+
+                  </ul>
+                </div> 
+                    
+                        
                 </div>
             </nav>
         </>

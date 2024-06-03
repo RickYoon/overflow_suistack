@@ -6,6 +6,8 @@ We operate the defi functions in one-place
 
 # aggregated protocol
 
+Sui
+
 1. Scallop (Lend)
 2. Navi (Lend)
 3. Suilend (x)
@@ -13,6 +15,14 @@ We operate the defi functions in one-place
 5. Scallop (Borrow) / x
 6. Leverage Farming (x)
 
+# Infrastructure apis
+
+1. blockeden (Sui indexer API) : Portfolio
+2. blockvision (RPC) : (-) coin metadata
+3. Space and Time : -
+4. ZettaBlock : -
+
 # reference
 
 1. cetus : https://github.com/CetusProtocol/cetus-clmm-sui-sdk?tab=readme-ov-file
+2.

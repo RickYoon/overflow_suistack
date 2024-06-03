@@ -1,5 +1,6 @@
 import 'App.css'; 
 import react, {useState, useEffect} from "react";
+import axios from 'axios';
 import styled, { keyframes } from 'styled-components';
 import { useWallet } from "@suiet/wallet-kit";
 
@@ -172,7 +173,7 @@ function MainPage() {
               <div class="w-80 m-auto relative pt-5">
                   <input value={suiAmount} onChange={handleInputChange} type="search" id="search" class="block w-full p-4 text-xm text-gray-900 border border-gray-300 rounded-lg bg-white focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="0" />
                   {/* <button class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Max</button> */}
-              </div>             
+              </div>
 
               <div className="md:flex md:justify-center md:items-center mt-10">
                   <div className="flex flex-row" style={{fontSize:"20px"}}>
