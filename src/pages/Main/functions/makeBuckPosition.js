@@ -19,7 +19,7 @@ import {
     CETUS_ROUTER_SWAP_TARGET,
   } from "./constants.js";
 
-export async function BuckPosition() {
+export async function BuckPosition(address, amount) {
 
   // reference tranactions
   // https://suivision.xyz/txblock/Cm2V8crFesPS3f2jvVXjrGD946KqHHk29TouXPiJc7Yt
@@ -35,7 +35,7 @@ export async function BuckPosition() {
   
   // 트렌젝션 만들기
   const tx = new TransactionBlock();
-  tx.setSender("0x79dea7c391d4d756a6a66963dff03ce97c235e918518fb8cbd99602ccde10db2");
+  tx.setSender(address);
   
   const ORACLE_OBJECT = Inputs.SharedObjectRef({
     objectId:
@@ -70,7 +70,7 @@ export async function BuckPosition() {
   });
 
   // 인출할 코인 split 하기
-  const [coin] = tx.splitCoins(tx.gas, [tx.pure(20000000000)]);
+  const [coin] = tx.splitCoins(tx.gas, [tx.pure(amount * 1000000000)]);
 
   // unwrap sui coin to balance
   const sui_balance = tx.moveCall({
@@ -89,7 +89,7 @@ export async function BuckPosition() {
         tx.object(ORACLE_OBJECT),
         tx.object(CLOCK_OBJECT),
         sui_balance,
-        tx.pure(11940000000),
+        tx.pure((amount * 1000000000)/2),
         tx.pure(["0x659aec5cf141b88f3eeed1aa5ea1398688be93d5b62d548837c7a51443a7b0d4"]),
       ]
     });
@@ -101,7 +101,7 @@ export async function BuckPosition() {
       arguments: [buck_output_balance],
     });
 
-    tx.transferObjects([buck_res], tx.pure("0x79dea7c391d4d756a6a66963dff03ce97c235e918518fb8cbd99602ccde10db2"));
+    tx.transferObjects([buck_res], tx.pure(address));
    
     return tx;
     

@@ -4,13 +4,14 @@ import styled, { keyframes } from 'styled-components';
 import { useWallet } from "@suiet/wallet-kit";
 
 import {lendSuiToScallop} from "./functions/scallop/depositSui.js"
+import {LendSuiNavi} from "./functions/navi/lendSui.js"
+
 
 import {cetusSwapExec} from "./functions/cetusSwapExec.js"
 import {oracleUpdate} from "./functions/updateOracle.js"
 // import {scallopMint} from "./functions/scallopDeposit.js"
 import {BuckPosition} from "./functions/makeBuckPosition.js"
 import {LendToSuilend} from "./functions/suilend/lendToSuilend.js"
-import {LendSuiNavi} from "./functions/navi/lendSui.js"
 // import {FlashloanLeverage} from "./functions/buck/FlashLeverage.js"
 
 import "@suiet/wallet-kit/style.css";
@@ -20,105 +21,81 @@ function MainPage() {
 
   const wallet = useWallet(); 
 
-  const [suiAmount, setSuiAmount]= useState(0)
+  const [suiAmount, setSuiAmount]= useState()
 
   const handleInputChange = (e) => {
     setSuiAmount(e.target.value);
-};
-    // DepositSui
+  };
 
-    async function handleLendSuiScallop(walletAddress, Amount) {
-      
-      if (!wallet.connected) return;
-      const txb = await lendSuiToScallop(wallet.address, suiAmount);
-  
-      try {
-        // call the wallet to sign and execute the transaction
-        const res = await wallet.signAndExecuteTransactionBlock({
-          transactionBlock: txb,
-        });
+  async function handleLendSuiScallop(walletAddress, Amount) {
     
-        // console.log("transaction success!", res);
-  
-        Swal.fire({
-          title: "Success!",
-          html: `
-                <b>Check the transaction</b> ->
-                <a href="https://suivision.xyz/txblock/${res.digest}" target="_blank">Link</a> 
-             `
-        });
-  
-      } catch (e) {
-        alert("Oops!! ");
-        console.error("transaction failed", e);
-      }
-    }
-
-
-
-  async function handleCetusSwap() {
-
     if (!wallet.connected) return;
-    // const txb = await leverageFarming();
-    const txb = await cetusSwapExec();
+    const txb = await lendSuiToScallop(wallet.address, suiAmount);
 
     try {
       // call the wallet to sign and execute the transaction
       const res = await wallet.signAndExecuteTransactionBlock({
         transactionBlock: txb,
       });
-      console.log("transaction success!", res);
-      alert("Congrats! ");
+  
+      // console.log("transaction success!", res);
+
+      Swal.fire({
+        title: "Success!",
+        html: `
+              <b>Check the transaction</b> ->
+              <a href="https://suivision.xyz/txblock/${res.digest}" target="_blank">Link</a> 
+            `
+      });
+
     } catch (e) {
       alert("Oops!! ");
       console.error("transaction failed", e);
     }
-
   }
 
-  async function handleUpdateOracle() {
+  async function handleNaviSui() {
 
     if (!wallet.connected) return;
-    // const txb = await leverageFarming();
-    const txb = await oracleUpdate();
+    const txb = await LendSuiNavi(wallet.address, suiAmount);
 
     try {
       // call the wallet to sign and execute the transaction
       const res = await wallet.signAndExecuteTransactionBlock({
         transactionBlock: txb,
       });
-      console.log("transaction success!", res);
-      alert("Congrats! ");
+      // console.log("transaction success!", res);
+
+      Swal.fire({
+        title: "Success!",
+        html: `
+              <b>Check the transaction</b> ->
+              <a href="https://suivision.xyz/txblock/${res.digest}" target="_blank">Link</a> 
+            `
+      });
+
     } catch (e) {
-      alert("Oops!! ");
-      console.error("transaction failed", e);
+      // alert("Fail transaction!! ");
+      // console.error("transaction failed", e);
     }
   }
 
-  // async function handleScallop() {
+  async function handleSuiLend() {
 
-  //   if (!wallet.connected) return;
-  //   // const txb = await leverageFarming();
-  //   const txb = await scallopMint();
+    alert("Under Contruction");
 
-  //   try {
-  //     // call the wallet to sign and execute the transaction
-  //     const res = await wallet.signAndExecuteTransactionBlock({
-  //       transactionBlock: txb,
-  //     });
-  //     console.log("transaction success!", res);
-  //     alert("Congrats! ");
-  //   } catch (e) {
-  //     alert("Oops!! ");
-  //     console.error("transaction failed", e);
-  //   }
-  // }
+  }
 
+  async function handleBorrowUSDCScallop() {
+
+    alert("Under Contruction");
+
+  }
 
   async function handleBuck() {
 
     if (!wallet.connected) return;
-    const txb = await BuckPosition();
+    const txb = await BuckPosition(wallet.address, suiAmount);
 
     try {
       // call the wallet to sign and execute the transaction
@@ -138,23 +115,7 @@ function MainPage() {
     }
   }
 
-  async function handleNaviSui() {
 
-    if (!wallet.connected) return;
-    const txb = await LendSuiNavi();
-
-    try {
-      // call the wallet to sign and execute the transaction
-      const res = await wallet.signAndExecuteTransactionBlock({
-        transactionBlock: txb,
-      });
-      console.log("transaction success!", res);
-      alert("Congrats! ");
-    } catch (e) {
-      alert("Oops!! ");
-      console.error("transaction failed", e);
-    }
-  }
 
   async function makebuck() {
 
@@ -210,12 +171,12 @@ function MainPage() {
                 
               <div class="w-80 m-auto relative pt-5">
                   <input value={suiAmount} onChange={handleInputChange} type="search" id="search" class="block w-full p-4 text-xm text-gray-900 border border-gray-300 rounded-lg bg-white focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="0" />
-                  <button class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Max</button>
+                  {/* <button class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Max</button> */}
               </div>             
 
               <div className="md:flex md:justify-center md:items-center mt-10">
                   <div className="flex flex-row" style={{fontSize:"20px"}}>
-                      <div>Select Single Finance</div>
+                      <div>Select Single Product</div>
                   </div>                
               </div>
 
@@ -228,7 +189,7 @@ function MainPage() {
                   Lend to Navi <br/>
                   Apr : 22.12%
                 </button> 
-                <button onClick={LendToSuilend} class="bg-white hover:bg-gray-100 hover:border-blue-300 border border-red inline-block w-full p-3 text-blue-600 rounded-lg focus:ring-1 focus:ring-blue-300 active focus:outline-none dark:bg-blue-700 dark:text-white">
+                <button onClick={handleSuiLend} class="bg-white hover:bg-gray-100 hover:border-blue-300 border border-red inline-block w-full p-3 text-blue-600 rounded-lg focus:ring-1 focus:ring-blue-300 active focus:outline-none dark:bg-blue-700 dark:text-white">
                   Lend to Suilend <br/>
                   Apr : 13.39%
                 </button>
@@ -239,12 +200,12 @@ function MainPage() {
                   Lend and Borrow Buck <br />
                   APR : - 4.5 % (fixed)
                 </button> 
-                <button onClick={handleBuck} class="bg-white hover:bg-gray-100 hover:border-blue-300 border border-red inline-block w-full p-3 text-blue-600 rounded-lg focus:ring-1 focus:ring-blue-300 active focus:outline-none dark:bg-blue-700 dark:text-white">
-                  Borrow USDC <br />
+                <button onClick={handleBorrowUSDCScallop} class="bg-white hover:bg-gray-100 hover:border-blue-300 border border-red inline-block w-full p-3 text-blue-600 rounded-lg focus:ring-1 focus:ring-blue-300 active focus:outline-none dark:bg-blue-700 dark:text-white">
+                  Borrow USDC (Scallop)<br />
                   APR : + 11.5 %
                 </button> 
 
-                <button class="inline-block w-full p-3 text-blue-600 rounded-lg focus:ring-1 focus:ring-blue-300 active hover:bg-gray-100 hover:border-blue-300 border border-red ">
+                <button onClick={handleBorrowUSDCScallop} class="inline-block w-full p-3 text-blue-600 rounded-lg focus:ring-1 focus:ring-blue-300 active hover:bg-gray-100 hover:border-blue-300 border border-red ">
                   add more +<br />
                 </button> 
 
@@ -257,7 +218,7 @@ function MainPage() {
               </div>
 
               <div class="flex space-x-5 mt-0 p-3">
-                <button class="bg-white hover:bg-gray-100 hover:border-blue-300 border border-red inline-block w-full p-3 text-blue-600 rounded-lg focus:ring-1 focus:ring-blue-300 active focus:outline-none dark:bg-blue-700 dark:text-white">
+                <button onClick={handleBorrowUSDCScallop} class="bg-white hover:bg-gray-100 hover:border-blue-300 border border-red inline-block w-full p-3 text-blue-600 rounded-lg focus:ring-1 focus:ring-blue-300 active focus:outline-none dark:bg-blue-700 dark:text-white">
                   Leverage Farming <br/>
                   Apr : 14.22%
                 </button> 

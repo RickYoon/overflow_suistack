@@ -1,14 +1,17 @@
 import { TransactionBlock, Inputs } from "@mysten/sui.js/transactions";
 // import { CLOCK_OBJECT } from "./constants.js";
 
-export async function LendSuiNavi() {
+export async function LendSuiNavi(address, amount) {
 
   // reference tranactions
   // https://suivision.xyz/txblock/5E4KHy4htBd2J8H15qBQgV6KxDBhpVcpeDZjztv2Cgns
 
   // 트렌젝션 만들기
+
+  try {
+    
   const tx = new TransactionBlock();
-  tx.setSender("0xa59fc5ed0e38f03995262b73916126592d240736ddf6f82c1901ea1d08b566be");
+  tx.setSender(address);
 
   const CLOCK_OBJECT = Inputs.SharedObjectRef({
     objectId:
@@ -45,7 +48,7 @@ export async function LendSuiNavi() {
     initialSharedVersion: 38232222
   });
 
-  const coin = tx.splitCoins(tx.gas, [tx.pure(1000000000)]);
+  const coin = tx.splitCoins(tx.gas, [tx.pure(amount*1000000000)]);
 
   tx.moveCall({
       target: "0xc6374c7da60746002bfee93014aeb607e023b2d6b25c9e55a152b826dbc8c1ce::incentive_v2::entry_deposit",
@@ -56,7 +59,7 @@ export async function LendSuiNavi() {
         tx.object(DETAIL_OBJECT),
         tx.pure(0),        
         coin,
-        tx.pure(1000000000),     
+        tx.pure(amount*1000000000),     
         tx.object(LAST_OBJECT),
         tx.object(NEXT_OBJECT)
       ]
@@ -64,5 +67,12 @@ export async function LendSuiNavi() {
 
    
     return tx;
+
+  } catch (error) {
+
+    alert("check your input value")
+    
+  }
+
     
   }
