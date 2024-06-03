@@ -11,7 +11,7 @@ import {metamaskDepositExecutor} from './metamaskExecutor.js';
 import WalletManageBox from "./components/WalletManageBox"
 
 import poolInfos from "./poolInfos.json"
-import { SDK } from './InitMainetSdk.ts'
+import { SDK } from './InitMainetSdk'
 import { ConnectButton,useWallet, addressEllipsis } from "@suiet/wallet-kit";
 import { TransactionBlock,Inputs } from "@mysten/sui.js/transactions";
 // import { Inputs } from "@mysten/sui.js/inputs";

@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import TopNav from "component/topNav"
-import DetailStaking from "pages/Detail_Staking"
+import DetailStaking from "pages/Main"
 
 // import 'semantic-ui-css/semantic.min.css'
 import './App.css';

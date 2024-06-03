@@ -1,14 +1,14 @@
 import { TransactionBlock, Inputs } from "@mysten/sui.js/transactions";
 // import { CLOCK_OBJECT } from "./constants.js";
 
-export async function DepositSui() {
+export async function lendSuiToScallop(address, amount) {
 
   // reference tranactions
   // https://suivision.xyz/txblock/9PSewbAdsNW2gCuwbGTzSsAXpY6C5LFXuYZRG1ZQ2D2T
 
   // 트렌젝션 만들기
   const tx = new TransactionBlock();
-  tx.setSender("0x79dea7c391d4d756a6a66963dff03ce97c235e918518fb8cbd99602ccde10db2");
+  tx.setSender(address);
 
   const PROTOCOL_OBJECT = Inputs.SharedObjectRef({
     objectId:
@@ -31,7 +31,7 @@ export async function DepositSui() {
     initialSharedVersion: 1,
   });
 
-  const [coin] = tx.splitCoins(tx.gas, [tx.pure(1000000000)]);
+  const [coin] = tx.splitCoins(tx.gas, [tx.pure(amount * 1000000000)]);
 
   // open position: lend sui
   const buck_output_balance = tx.moveCall({
@@ -45,8 +45,9 @@ export async function DepositSui() {
       ]
     });
 
-    tx.transferObjects([buck_output_balance], tx.pure("0x79dea7c391d4d756a6a66963dff03ce97c235e918518fb8cbd99602ccde10db2"));
+    tx.transferObjects([buck_output_balance], tx.pure(address));
    
     return tx;
     
   }
+
